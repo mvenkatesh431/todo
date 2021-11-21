@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"fmt"
+	"strings"
 
 	"github.com/spf13/cobra"
 )
@@ -13,6 +14,10 @@ var addCmd = &cobra.Command{
 
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("add called")
+		for i, task := range args {
+			fmt.Println(i, task)
+		}
+		fmt.Println(strings.Join(args, " "))
 	},
 }
 

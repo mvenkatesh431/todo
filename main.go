@@ -15,8 +15,23 @@ limitations under the License.
 */
 package main
 
-import "github.com/mvenkatesh431/todo/cmd"
+import (
+	"log"
+
+	"github.com/mvenkatesh431/todo/cmd"
+	"github.com/mvenkatesh431/todo/db"
+)
 
 func main() {
+	// Initialize the BoltDB
+	checkErr(db.Initialize())
+
+	// Init Cobra and start
 	cmd.Execute()
+}
+
+func checkErr(err error) {
+	if err != nil {
+		log.Fatalf("Error: %s\n", err)
+	}
 }

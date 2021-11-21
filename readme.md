@@ -9,6 +9,7 @@ We will use the following modules
 
 ### Notes:
 - Make sure to use the same name for the project as your cobra command. (Here I am creating a CLI command 'todo', So I named my project as 'todo')
+- This is my practise version of one of the exercises of gophercises
 
 ### Cobra setup
 
@@ -32,4 +33,16 @@ $ go install
 $ todo -h
 todo - A CLI Command Line Todo task Manager
 
+```
+
+### BoltDB setup:
+
+As per the bolt github page, It is not activly maintained so we are going to use the clone of bolt db - https://github.com/etcd-io/bbolt
+
+```
+# use the following command to get the bbolt db
+$ go get go.etcd.io/bbolt/...
+
+# importing
+import	bolt "go.etcd.io/bbolt"
 ```
