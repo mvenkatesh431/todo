@@ -46,3 +46,65 @@ $ go get go.etcd.io/bbolt/...
 # importing
 import	bolt "go.etcd.io/bbolt"
 ```
+
+### Example Usage:
+
+First of all install the command using the 'go install', Then 'todo' command is ready to use. 
+You can add, list and delete todos. Please look at the below example for usage.
+
+```
+todo> go install .
+todo> 
+todo> todo -h
+  todo [command]
+
+  completion  generate the autocompletion script for the specified shell
+  list        To List the tasks in the Todo List
+todo> go install .
+todo - A CLI Command Line Todo task Manager
+todo>
+todo - A CLI Command Line Todo task Manager
+  todo [flags]
+Available Commands:
+  add         To Add a task to the Todo List
+  completion  generate the autocompletion script for the specified shell
+  list        To List the tasks in the Todo List
+  -h, --help   help for todo
+
+todo> todo list
+todo>
+todo> todo add "Commit this code"
+Todo 'Commit this code' Added successfully to TodoList
+Todo 'Drive to survive' Added successfully to TodoList
+Todo 'Golang is Awesome' Added successfully to TodoList
+todo>
+2. Drive to survive
+3. Golang is Awesome
+todo>
+todo>
+2. Golang is Awesome
+Todo 'Who is going to be World Champion?' Added successfully to TodoList
+1. Commit this code
+3. Who is going to be World Champion?
+todo>
+todo> todo delete 1
+Todo 'Commit this code' marked as Completed
+todo>
+todo> todo list
+1. Golang is Awesome
+2. Who is going to be World Champion?
+todo>
+todo> todo delete 2
+Todo 'Who is going to be World Champion?' marked as Completed
+todo>
+todo> todo list
+1. Golang is Awesome
+todo>
+todo> todo delete 1
+Todo 'Golang is Awesome' marked as Completed
+todo>
+todo> todo list
+Your TodoList is Empty!. Add few todos :)
+todo>
+todo> 
+```

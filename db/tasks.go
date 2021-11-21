@@ -35,7 +35,7 @@ func Initialize() error {
 	if err != nil {
 		return err
 	}
-	defer db.Close()
+	//defer db.Close()
 
 	// Create the Bucket in DB, We are using "CreateBucketIfNotExists", So will create only if there is no bucket
 	// db.update returns "nil", If everything is fine
@@ -44,7 +44,7 @@ func Initialize() error {
 		if err != nil {
 			return fmt.Errorf("failed to create bucket: %s", err)
 		}
-		fmt.Println("DB Initialzed successfully at", dbFile)
+		//fmt.Println("DB Initialzed successfully at", dbFile)
 		return nil
 	})
 }
